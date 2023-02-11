@@ -2,7 +2,7 @@
 # 需要注意的是__slots__的限定只对当前类的对象生效，对子类并不起任何作用。
 class Person(object):
     # 限定Person对象只能绑定_name, _age和_gender属性
-    __slots__ = ('_name', '_age', '_gather')
+    __slots__ = ('_name', '_age', '_gender')
 
     def __init__(self, name, age):
         self._name = name
@@ -31,7 +31,8 @@ def main():
     person = Person('王大锤', 22)
     person.play()
     person._gender = '男'
-    # AttributeError: 'Person' object has no attribute '_gender'
+    # AttributeError: 'Person' object has no attribute '_is_gay'
+    # person._is_gay = True
 
 
 if __name__ == '__main__':
